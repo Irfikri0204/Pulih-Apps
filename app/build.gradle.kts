@@ -54,9 +54,10 @@ dependencies {
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
 
-//    FirebaseBOM dan Firebase Analytics
+//    FirebaseBOM, Firebase Analytics dan FirebaseAuth
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
 
 //    Testing
     testImplementation(libs.junit)
