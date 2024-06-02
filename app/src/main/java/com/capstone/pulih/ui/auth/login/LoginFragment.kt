@@ -8,12 +8,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.capstone.pulih.R
 import com.capstone.pulih.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +32,24 @@ class LoginFragment : Fragment() {
 
 //        Menampilkan Message Menggunakan Toast
         binding.btnLogin.setOnClickListener {
-            Toast.makeText(requireContext(), "Fitur Masih Coming Soon!", Toast.LENGTH_LONG).show()
+            firebaseAuth = FirebaseAuth.getInstance()
+//            Mengambil String dari Input
+            val email = binding.edLoginEmail.text.toString()
+            val password = binding.edLoginPassword.text.toString()
+//            Pengkondisian Inputan
+            if (email.isNotEmpty()&&password.isNotEmpty()){
+//                Firebase Login
+                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
+                    if(it.isSuccessful){
+                        findNavController().navigate(R.id.nav_login_to_main)
+                        Toast.makeText(requireContext(), "Login Berhasil!",Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(requireContext(),it.exception.toString(),Toast.LENGTH_LONG).show()
+                    }
+                }
+            } else {
+                Toast.makeText(requireContext(),"Harap isi dengan benar!",Toast.LENGTH_LONG).show()
+            }
         }
 
 //        Mengecek Argumen is_from_register

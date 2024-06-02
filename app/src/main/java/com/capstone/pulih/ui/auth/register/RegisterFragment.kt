@@ -31,15 +31,18 @@ class RegisterFragment : Fragment() {
 //        Navigasi ke Login Fragment
         binding.linkLogin.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.loginFragment))
 
-//        Menampilkan Message Menggunakan Toast
+//        Logic pada Button Login
         binding.btnRegister.setOnClickListener {
+//            Mengambil String dari Input
             val email = binding.edRegisterEmail.text.toString()
             val password = binding.edRegisterPassword.text.toString()
+//            Pengkondisian Inputan
             if (email.isNotEmpty()&&password.isNotEmpty()){
+//                Firebase Sign In
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
                     if(it.isSuccessful){
                         findNavController().navigate(R.id.nav_register_to_login)
-                        Toast.makeText(requireContext(), "Sign In Berhasil!",Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), "Register Berhasil!",Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(requireContext(),it.exception.toString(),Toast.LENGTH_LONG).show()
                     }

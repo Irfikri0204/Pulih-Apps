@@ -16,6 +16,9 @@
         <action
             android:id="@+id/nav_login_to_register"
             app:destination="@id/registerFragment"/>
+        <action
+            android:id="@+id/nav_login_to_main"
+            app:destination="@id/mainActivity"/>
         <argument
             android:name="is_from_register"
             app:argType="boolean"/>
@@ -41,4 +44,9 @@
             app:destination="@id/loginFragment"
             app:popUpToInclusive="false"/>
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.capstone.pulih.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main"/>
 </navigation>
