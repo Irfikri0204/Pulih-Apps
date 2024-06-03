@@ -46,13 +46,16 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_primary"
             android:id="@+id/btn_login_user"
             android:text="Masuk Sebagai User" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:id="@+id/btn_login_counselor"
+            android:background="@drawable/button_secondary"
             android:text="Masuk Sebagai Konselor" />
     </LinearLayout>
 

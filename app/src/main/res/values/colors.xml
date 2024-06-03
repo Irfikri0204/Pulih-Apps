@@ -5,5 +5,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="putih_tulang">#E3E3E3</color>
     <color name="ungu">#454B94</color>
+    <color name="ungu_gelap">#2E3268</color>
     <color name="abu">#BDBDBD</color>
 </resources>
