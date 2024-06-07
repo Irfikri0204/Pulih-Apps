@@ -28,7 +28,4 @@ class Preferences(context: Context){
     fun getBoolean(key: String):Boolean{
         return sharedPref.getBoolean(key,false)
     }
-    fun clear(){
-        editor.clear()
-    }
 }

@@ -49,10 +49,11 @@ class LoginFragment : Fragment() {
 //                Firebase Login
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
                     if(it.isSuccessful){
-                        sharedPref = Preferences(requireContext())
+                        sharedPref = Preferences(requireActivity())
                         sharedPref.put(AuthConstant.PREF_IS_LOGIN,true)
                         findNavController().navigate(R.id.nav_login_to_main)
                         Toast.makeText(requireContext(), "Login Berhasil!",Toast.LENGTH_LONG).show()
+                        requireActivity().finish()
                     } else {
                         Toast.makeText(requireContext(),it.exception.toString(),Toast.LENGTH_LONG).show()
                     }

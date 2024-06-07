@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:id="@+id/cl_welcome"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/container_card2"
         android:padding="20dp"
@@ -57,6 +57,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_deteksi"
             android:layout_marginTop="16dp"
             android:background="@drawable/button_primary"
             android:text="Deteksi Stress"
@@ -85,7 +86,7 @@
             android:textColor="@color/white"
             android:textSize="13sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -110,11 +111,9 @@
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:src="@drawable/intro"
-            android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_intro" />
-
+            app:layout_constraintTop_toTopOf="parent" />
         <Button
             android:id="@+id/btn_intro"
             android:layout_width="wrap_content"
@@ -172,7 +171,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:id="@+id/link_konseling_desc"
+            android:id="@+id/link_konseling"
             android:layout_width="0dp"
             android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
@@ -225,11 +224,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:layout_marginHorizontal="16dp"
         android:id="@+id/cl_couns"
-        android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_konselor">
         <TextView
@@ -255,7 +254,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_couns" />
         <Button
             android:layout_width="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_primary"
             app:layout_constraintStart_toStartOf="parent"

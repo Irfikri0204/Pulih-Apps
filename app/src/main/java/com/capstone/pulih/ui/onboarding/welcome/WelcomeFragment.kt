@@ -1,11 +1,11 @@
 package com.capstone.pulih.ui.onboarding.welcome
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.capstone.pulih.R
@@ -30,23 +30,24 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnLoginUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.loginFragment))
         binding.btnLoginCounselor.setOnClickListener{
-            Toast.makeText(requireContext(), "Fitur Masih Coming Soon!", Toast.LENGTH_LONG).show()
+            comingSoon()
         }
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        sharedPref = Preferences(requireContext())
-    }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun comingSoon(){
+        Toast.makeText(requireContext(), getString(R.string.coming_soon), Toast.LENGTH_LONG).show()
     }
 
     override fun onStart() {
         super.onStart()
+        sharedPref = Preferences(requireActivity())
         if(sharedPref.getBoolean(AuthConstant.PREF_IS_LOGIN)){
-            findNavController().navigate(R.id.mainActivity)
+            findNavController().navigate(R.id.nav_welcome_to_main)
+            requireActivity().finish()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
