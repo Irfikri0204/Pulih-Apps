@@ -5,7 +5,7 @@
     android:background="@drawable/gradasi_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.onboarding.welcome.WelcomeFragment">
+    tools:context=".ui.onboarding.welcome.WelcomeActivity">
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"

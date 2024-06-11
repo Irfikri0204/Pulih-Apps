@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+    <activity
+        android:id="@+id/welcomeActivity"
+        android:name="com.capstone.pulih.ui.onboarding.welcome.WelcomeActivity"
+        tools:layout="@layout/activity_welcome"
+        android:label="activity_welcome"/>
+    <activity
+        android:id="@+id/inputDataActivity"
+        android:name="com.capstone.pulih.ui.inputdata.InputDataActivity"
+        tools:layout="@layout/activity_input_data"
+        android:label="activity_input_data"/>
+</navigation>
